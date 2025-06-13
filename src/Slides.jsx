@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
 
 export function Slide1() {
@@ -17,7 +17,6 @@ export function Slide1() {
           <div className="headline">The Great Microsoft 365<br />Copilot Showdown</div>
           <div className="subheadline">Go Beyond Prompts. Achieve Mastery.</div>
         </div>
-        <div className="qa-text">QA</div>
       </div>
     </div>
   );
@@ -93,7 +92,6 @@ export function Slide2() {
             </div>
           </div>
         </div>
-        <div className="qa-branding" style={{ position: 'absolute', left: 16, bottom: 16, fontSize: 18, color: '#0077B6', fontWeight: 700 }}>QA</div>
       </div>
     </div>
   );
@@ -141,38 +139,108 @@ export function Slide3() {
             Based on the official Microsoft MS-4005 curriculum—transformed into a high-energy competition.
           </div>
         </div>
-        <div className="qa-branding" style={{ position: 'absolute', bottom: 18, left: 18, color: '#0077B6', fontWeight: 700, fontSize: 18 }}>QA</div>
       </div>
     </div>
   );
 }
 
 export function Slide4() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 900);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   return (
     <div id="slide-4">
-      <div className="slide-container" style={{ position: 'relative' }}>
-        <div className="content-wrapper" style={{ padding: '24px 4vw', maxWidth: 900, margin: '0 auto' }}>
-          <div className="headline" style={{ textAlign: 'center', fontSize: 22, marginBottom: 8 }}>How the Showdown Works</div>
-          <div className="subheadline" style={{ textAlign: 'center', fontSize: 16, marginBottom: 12 }}>Compete. Strategise. Win.</div>
-          <div className="workflow-container" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-            <div className="workflow-step" style={{ width: '100%', alignItems: 'center', textAlign: 'center', marginBottom: 8 }}>
-              <div className="workflow-icon" style={{ width: 60, height: 60, fontSize: 24, marginBottom: 10 }}><i className="ri-team-line"></i><div className="step-number">1</div></div>
-              <div className="workflow-title" style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>Elite Squads</div>
-              <div className="workflow-text" style={{ fontSize: 14 }}>Form teams of four to tackle challenges collaboratively, combining diverse skills for maximum impact.</div>
+      <div className="slide-container" style={{ position: 'relative', background: '#fff', color: '#000' }}>
+        <div className="content-wrapper" style={{ padding: isMobile ? '24px 4vw' : '60px 80px', maxWidth: 1100, margin: '0 auto' }}>
+          <div className="headline" style={{ textAlign: 'center', fontSize: isMobile ? 22 : 36, marginBottom: isMobile ? 8 : 20 }}>How the Showdown Works</div>
+          <div className="subheadline" style={{ textAlign: 'center', fontSize: isMobile ? 16 : 24, marginBottom: isMobile ? 12 : 28 }}>Compete. Strategise. Win.</div>
+          <div
+            className="workflow-container"
+            style={{
+              display: 'flex',
+              flexDirection: isMobile ? 'column' : 'row',
+              gap: isMobile ? 14 : 32,
+              justifyContent: 'space-between',
+              alignItems: isMobile ? 'stretch' : 'flex-start',
+              margin: isMobile ? '0' : '40px 0',
+              width: '100%'
+            }}
+          >
+            {/* Step 1 */}
+            <div
+              className="workflow-step"
+              style={{
+                flex: 1,
+                background: '#f9f9f9',
+                borderRadius: 16,
+                padding: isMobile ? 18 : 28,
+                boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                textAlign: 'center',
+                minWidth: 0
+              }}
+            >
+              <div className="workflow-icon" style={{ width: 60, height: 60, fontSize: 28, background: '#FF8500', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12, position: 'relative' }}>
+                <i className="ri-team-line"></i>
+                <div className="step-number" style={{ position: 'absolute', top: -10, left: -10, width: 28, height: 28, background: '#000', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 16, border: '2px solid #fff' }}>1</div>
+              </div>
+              <div className="workflow-title" style={{ fontWeight: 700, fontSize: isMobile ? 16 : 20, marginBottom: 8, color: '#FF8500' }}>Elite Squads</div>
+              <div className="workflow-text" style={{ fontSize: isMobile ? 14 : 16 }}>Form teams of four to tackle challenges collaboratively, combining diverse skills for maximum impact.</div>
             </div>
-            <div className="workflow-step" style={{ width: '100%', alignItems: 'center', textAlign: 'center', marginBottom: 8 }}>
-              <div className="workflow-icon" style={{ width: 60, height: 60, fontSize: 24, marginBottom: 10 }}><i className="ri-timer-flash-line"></i><div className="step-number">2</div></div>
-              <div className="workflow-title" style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>Timed Missions</div>
-              <div className="workflow-text" style={{ fontSize: 14 }}>Race against the clock to deliver high-quality, AI-powered solutions with strategic prompting.</div>
+            {/* Step 2 */}
+            <div
+              className="workflow-step"
+              style={{
+                flex: 1,
+                background: '#f9f9f9',
+                borderRadius: 16,
+                padding: isMobile ? 18 : 28,
+                boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                textAlign: 'center',
+                minWidth: 0
+              }}
+            >
+              <div className="workflow-icon" style={{ width: 60, height: 60, fontSize: 28, background: '#FF8500', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12, position: 'relative' }}>
+                <i className="ri-timer-flash-line"></i>
+                <div className="step-number" style={{ position: 'absolute', top: -10, left: -10, width: 28, height: 28, background: '#000', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 16, border: '2px solid #fff' }}>2</div>
+              </div>
+              <div className="workflow-title" style={{ fontWeight: 700, fontSize: isMobile ? 16 : 20, marginBottom: 8, color: '#FF8500' }}>Timed Missions</div>
+              <div className="workflow-text" style={{ fontSize: isMobile ? 14 : 16 }}>Race against the clock to deliver high-quality, AI-powered solutions with strategic prompting.</div>
             </div>
-            <div className="workflow-step" style={{ width: '100%', alignItems: 'center', textAlign: 'center', marginBottom: 8 }}>
-              <div className="workflow-icon" style={{ width: 60, height: 60, fontSize: 24, marginBottom: 10 }}><i className="ri-award-line"></i><div className="step-number">3</div></div>
-              <div className="workflow-title" style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>The Final Boss</div>
-              <div className="workflow-text" style={{ fontSize: 14 }}>Put all skills to the test in a culminating challenge to demonstrate complete Copilot mastery.</div>
+            {/* Step 3 */}
+            <div
+              className="workflow-step"
+              style={{
+                flex: 1,
+                background: '#f9f9f9',
+                borderRadius: 16,
+                padding: isMobile ? 18 : 28,
+                boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                textAlign: 'center',
+                minWidth: 0
+              }}
+            >
+              <div className="workflow-icon" style={{ width: 60, height: 60, fontSize: 28, background: '#FF8500', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12, position: 'relative' }}>
+                <i className="ri-award-line"></i>
+                <div className="step-number" style={{ position: 'absolute', top: -10, left: -10, width: 28, height: 28, background: '#000', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 16, border: '2px solid #fff' }}>3</div>
+              </div>
+              <div className="workflow-title" style={{ fontWeight: 700, fontSize: isMobile ? 16 : 20, marginBottom: 8, color: '#FF8500' }}>The Final Boss</div>
+              <div className="workflow-text" style={{ fontSize: isMobile ? 14 : 16 }}>Put all skills to the test in a culminating challenge to demonstrate complete Copilot mastery.</div>
             </div>
           </div>
         </div>
-        <div className="qa-branding" style={{ position: 'absolute', left: 12, bottom: 12, fontSize: 16, color: '#0077B6', fontWeight: 700, zIndex: 10 }}>QA</div>
       </div>
     </div>
   );
@@ -199,7 +267,6 @@ export function Slide5() {
             </div>
           </div>
         </div>
-        <div className="qa-branding">QA</div>
       </div>
     </div>
   );
@@ -248,7 +315,6 @@ export function Slide6() {
             </div>
           </div>
         </div>
-        <div className="qa-branding">QA</div>
       </div>
     </div>
   );
@@ -275,13 +341,12 @@ export function Slide7() {
               <div className="challenge-example">"Sudden scenario change: Your prompt must now account for accessibility requirements..."</div>
             </div>
           </div>
-          <div className="stats-container">
-            <div className="stat-item"><div className="stat-value">15+</div><div className="stat-label">Unique Challenges</div></div>
-            <div className="stat-item"><div className="stat-value">500</div><div className="stat-label">Max Microbucks</div></div>
-            <div className="stat-item"><div className="stat-value">3</div><div className="stat-label">Difficulty Levels</div></div>
+          <div className="stats-container" style={{ display: 'flex', flexDirection: 'column', gap: 14, width: '100%', marginTop: 18 }}>
+            <div className="stat-item" style={{ width: '100%', maxWidth: '100%', padding: 14, fontSize: 18, background: '#f8f8f8', borderRadius: 12, textAlign: 'center' }}><div className="stat-value">15+</div><div className="stat-label">Unique Challenges</div></div>
+            <div className="stat-item" style={{ width: '100%', maxWidth: '100%', padding: 14, fontSize: 18, background: '#f8f8f8', borderRadius: 12, textAlign: 'center' }}><div className="stat-value">500</div><div className="stat-label">Max Microbucks</div></div>
+            <div className="stat-item" style={{ width: '100%', maxWidth: '100%', padding: 14, fontSize: 18, background: '#f8f8f8', borderRadius: 12, textAlign: 'center' }}><div className="stat-value">3</div><div className="stat-label">Difficulty Levels</div></div>
           </div>
         </div>
-        <div className="qa-branding">QA</div>
       </div>
     </div>
   );
@@ -312,7 +377,6 @@ export function Slide8() {
             </div>
           </div>
         </div>
-        <div className="qa-branding">QA</div>
       </div>
     </div>
   );
@@ -366,7 +430,6 @@ export function Slide9() {
             </div>
           </div>
         </div>
-        <div className="qa-branding">QA</div>
       </div>
     </div>
   );
@@ -397,7 +460,6 @@ export function Slide10() {
             </div>
           </div>
         </div>
-        <div className="qa-branding">QA</div>
       </div>
     </div>
   );
@@ -429,7 +491,6 @@ export function Slide11() {
             <div className="highlight-item"><div className="highlight-icon"><i className="ri-lightbulb-line"></i></div><div className="highlight-text">Practical Skills</div></div>
           </div>
         </div>
-        <div className="qa-branding">QA</div>
       </div>
     </div>
   );
@@ -449,7 +510,6 @@ export function Slide12() {
             <i className="ri-user-3-line"></i>&nbsp; Steve Brennan, <a href="mailto:Steve.Brennan@qa.com" className="contact-email" style={{ color: '#FF8200', borderBottom: '1px solid #FF8200', paddingBottom: 2, marginLeft: 5 }}>Steve.Brennan@qa.com</a>
           </div>
         </div>
-        <div className="qa-text" style={{ position: 'absolute', left: 16, bottom: 16, fontSize: 18, color: '#FF8200', fontWeight: 700 }}>QA</div>
       </div>
     </div>
   );
