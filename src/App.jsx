@@ -29,15 +29,61 @@ function App() {
             {idx === currentSlide && <SlideComponent />}
           </div>
         ))}
-      </div>
-      <div className="navigation-controls">
-        <button className="nav-button" onClick={() => setCurrentSlide((prev) => Math.max(prev - 1, 0))} disabled={currentSlide === 0}>Previous</button>
-        <div className="slide-dots">
-          {slides.map((_, idx) => (
-            <div key={idx} className={`dot${idx === currentSlide ? ' active' : ''}`} onClick={() => setCurrentSlide(idx)}>{idx + 1}</div>
-          ))}
-        </div>
-        <button className="nav-button" onClick={() => setCurrentSlide((prev) => Math.min(prev + 1, slides.length - 1))} disabled={currentSlide === slides.length - 1}>Next</button>
+        {/* Navigation Arrows */}
+        {currentSlide > 0 && (
+          <button
+            aria-label="Previous Slide"
+            onClick={() => setCurrentSlide((prev) => Math.max(prev - 1, 0))}
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: 8,
+              transform: 'translateY(-50%)',
+              background: 'rgba(0,0,0,0.7)',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '50%',
+              width: 48,
+              height: 48,
+              fontSize: 28,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 2000,
+              cursor: 'pointer',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
+            }}
+          >
+            <i className="ri-arrow-left-s-line"></i>
+          </button>
+        )}
+        {currentSlide < slides.length - 1 && (
+          <button
+            aria-label="Next Slide"
+            onClick={() => setCurrentSlide((prev) => Math.min(prev + 1, slides.length - 1))}
+            style={{
+              position: 'absolute',
+              top: '50%',
+              right: 8,
+              transform: 'translateY(-50%)',
+              background: 'rgba(0,0,0,0.7)',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '50%',
+              width: 48,
+              height: 48,
+              fontSize: 28,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 2000,
+              cursor: 'pointer',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
+            }}
+          >
+            <i className="ri-arrow-right-s-line"></i>
+          </button>
+        )}
       </div>
     </div>
   );

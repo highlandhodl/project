@@ -93,7 +93,7 @@ export function Slide2() {
             </div>
           </div>
         </div>
-        <div className="qa-branding">QA</div>
+        <div className="qa-branding" style={{ position: 'absolute', left: 16, bottom: 16, fontSize: 18, color: '#0077B6', fontWeight: 700 }}>QA</div>
       </div>
     </div>
   );
@@ -153,12 +153,11 @@ export function Slide4() {
       <div className="slide-container">
         <div className="accent-shape"></div>
         <div className="accent-shape-2"></div>
-        <div className="competitive-tag"><i className="ri-trophy-line"></i> High-Stakes Competition</div>
-        <div className="content-wrapper">
-          <div className="headline">How the Showdown Works</div>
-          <div className="subheadline">Compete. Strategise. Win.</div>
-          <div className="workflow-container">
-            <div className="workflow-connector"></div>
+        <div className="competitive-tag" style={{ display: 'none' }}></div>
+        <div className="content-wrapper" style={{ padding: '32px 8px', maxWidth: 900, margin: '0 auto' }}>
+          <div className="headline" style={{ textAlign: 'center', fontSize: 24, marginBottom: 10 }}>How the Showdown Works</div>
+          <div className="subheadline" style={{ textAlign: 'center', fontSize: 18, marginBottom: 18 }}>Compete. Strategise. Win.</div>
+          <div className="workflow-container" style={{ flexDirection: 'column', gap: 18 }}>
             <div className="workflow-step">
               <div className="workflow-icon"><i className="ri-team-line"></i><div className="step-number">1</div></div>
               <div className="workflow-title">Elite Squads</div>
@@ -176,7 +175,7 @@ export function Slide4() {
             </div>
           </div>
         </div>
-        <div className="qa-branding">QA</div>
+        <div className="qa-branding" style={{ position: 'absolute', left: 16, bottom: 16, fontSize: 18, color: '#0077B6', fontWeight: 700 }}>QA</div>
       </div>
     </div>
   );
@@ -442,21 +441,18 @@ export function Slide11() {
 export function Slide12() {
   return (
     <div id="slide-12">
-      <div className="slide-container">
-        <div className="accent-circle-1"></div>
-        <div className="accent-circle-2"></div>
-        <div className="content-wrapper">
-          <div className="headline">Become Copilot Champions</div>
-          <div className="cta-text">Ready to unleash your team's true potential? Bring The Great Microsoft 365 Copilot Showdown to your organisation.</div>
-          <div className="button-container">
-            <a href="mailto:Steve.Brennan@qa.com" className="cta-button">Book Your Showdown Now <i className="ri-arrow-right-line"></i></a>
+      <div className="slide-container" style={{ background: '#000', color: '#fff', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 0 }}>
+        <div className="content-wrapper" style={{ maxWidth: 600, width: '100%', padding: '32px 8px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div className="headline" style={{ fontSize: 28, textAlign: 'center', marginBottom: 10 }}>Become Copilot Champions</div>
+          <div className="cta-text" style={{ fontSize: 18, textAlign: 'center', margin: '18px 0', maxWidth: 400 }}>Ready to unleash your team's true potential? Bring The Great Microsoft 365 Copilot Showdown to your organisation.</div>
+          <div className="button-container" style={{ marginTop: 18, width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <a href="mailto:Steve.Brennan@qa.com" className="cta-button" style={{ fontSize: 18, padding: '12px 20px', borderRadius: 8 }}>Book Your Showdown Now <i className="ri-arrow-right-line"></i></a>
           </div>
-          <div className="contact-info">
-            <i className="ri-user-3-line"></i>&nbsp; Steve Brennan, <a href="mailto:Steve.Brennan@qa.com" className="contact-email">Steve.Brennan@qa.com</a>
+          <div className="contact-info" style={{ fontSize: 16, marginTop: 18, textAlign: 'center' }}>
+            <i className="ri-user-3-line"></i>&nbsp; Steve Brennan, <a href="mailto:Steve.Brennan@qa.com" className="contact-email" style={{ color: '#FF8200', borderBottom: '1px solid #FF8200', paddingBottom: 2, marginLeft: 5 }}>Steve.Brennan@qa.com</a>
           </div>
         </div>
-        <div className="qa-text">QA</div>
-        <div className="trusted-by">Trusted by leading UK organisations</div>
+        <div className="qa-text" style={{ position: 'absolute', left: 16, bottom: 16, fontSize: 18, color: '#FF8200', fontWeight: 700 }}>QA</div>
       </div>
     </div>
   );
