@@ -174,7 +174,9 @@ export function Slide4() {
             <div
               className="workflow-step"
               style={{
-                flex: 1,
+                ...(isMobile
+                  ? { width: '100%', minWidth: 0, maxWidth: '100%' }
+                  : { flex: 1, minWidth: 0 }),
                 background: '#f9f9f9',
                 borderRadius: 16,
                 padding: isMobile ? 18 : 28,
@@ -183,7 +185,6 @@ export function Slide4() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
-                minWidth: 0
               }}
             >
               <div className="workflow-icon" style={{ width: 60, height: 60, fontSize: 28, background: '#FF8500', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12, position: 'relative' }}>
@@ -197,7 +198,9 @@ export function Slide4() {
             <div
               className="workflow-step"
               style={{
-                flex: 1,
+                ...(isMobile
+                  ? { width: '100%', minWidth: 0, maxWidth: '100%' }
+                  : { flex: 1, minWidth: 0 }),
                 background: '#f9f9f9',
                 borderRadius: 16,
                 padding: isMobile ? 18 : 28,
@@ -206,7 +209,6 @@ export function Slide4() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
-                minWidth: 0
               }}
             >
               <div className="workflow-icon" style={{ width: 60, height: 60, fontSize: 28, background: '#FF8500', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12, position: 'relative' }}>
@@ -220,7 +222,9 @@ export function Slide4() {
             <div
               className="workflow-step"
               style={{
-                flex: 1,
+                ...(isMobile
+                  ? { width: '100%', minWidth: 0, maxWidth: '100%' }
+                  : { flex: 1, minWidth: 0 }),
                 background: '#f9f9f9',
                 borderRadius: 16,
                 padding: isMobile ? 18 : 28,
@@ -229,7 +233,6 @@ export function Slide4() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
-                minWidth: 0
               }}
             >
               <div className="workflow-icon" style={{ width: 60, height: 60, fontSize: 28, background: '#FF8500', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12, position: 'relative' }}>
