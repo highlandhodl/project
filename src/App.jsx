@@ -37,21 +37,21 @@ function App() {
             style={{
               position: 'absolute',
               top: '50%',
-              left: 8,
+              left: 12,
               transform: 'translateY(-50%)',
-              background: 'rgba(0,0,0,0.7)',
-              color: '#fff',
+              background: 'rgba(255,255,255,0.7)',
+              color: '#222',
               border: 'none',
               borderRadius: '50%',
-              width: 48,
-              height: 48,
-              fontSize: 28,
+              width: 36,
+              height: 36,
+              fontSize: 20,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               zIndex: 2000,
               cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
+              boxShadow: '0 1px 4px rgba(0,0,0,0.10)'
             }}
           >
             <i className="ri-arrow-left-s-line"></i>
@@ -64,21 +64,21 @@ function App() {
             style={{
               position: 'absolute',
               top: '50%',
-              right: 8,
+              right: 12,
               transform: 'translateY(-50%)',
-              background: 'rgba(0,0,0,0.7)',
-              color: '#fff',
+              background: 'rgba(255,255,255,0.7)',
+              color: '#222',
               border: 'none',
               borderRadius: '50%',
-              width: 48,
-              height: 48,
-              fontSize: 28,
+              width: 36,
+              height: 36,
+              fontSize: 20,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               zIndex: 2000,
               cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
+              boxShadow: '0 1px 4px rgba(0,0,0,0.10)'
             }}
           >
             <i className="ri-arrow-right-s-line"></i>

@@ -150,32 +150,29 @@ export function Slide3() {
 export function Slide4() {
   return (
     <div id="slide-4">
-      <div className="slide-container">
-        <div className="accent-shape"></div>
-        <div className="accent-shape-2"></div>
-        <div className="competitive-tag" style={{ display: 'none' }}></div>
-        <div className="content-wrapper" style={{ padding: '32px 8px', maxWidth: 900, margin: '0 auto' }}>
-          <div className="headline" style={{ textAlign: 'center', fontSize: 24, marginBottom: 10 }}>How the Showdown Works</div>
-          <div className="subheadline" style={{ textAlign: 'center', fontSize: 18, marginBottom: 18 }}>Compete. Strategise. Win.</div>
-          <div className="workflow-container" style={{ flexDirection: 'column', gap: 18 }}>
-            <div className="workflow-step">
-              <div className="workflow-icon"><i className="ri-team-line"></i><div className="step-number">1</div></div>
-              <div className="workflow-title">Elite Squads</div>
-              <div className="workflow-text">Form teams of four to tackle challenges collaboratively, combining diverse skills for maximum impact.</div>
+      <div className="slide-container" style={{ position: 'relative' }}>
+        <div className="content-wrapper" style={{ padding: '24px 4vw', maxWidth: 900, margin: '0 auto' }}>
+          <div className="headline" style={{ textAlign: 'center', fontSize: 22, marginBottom: 8 }}>How the Showdown Works</div>
+          <div className="subheadline" style={{ textAlign: 'center', fontSize: 16, marginBottom: 12 }}>Compete. Strategise. Win.</div>
+          <div className="workflow-container" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            <div className="workflow-step" style={{ width: '100%', alignItems: 'center', textAlign: 'center', marginBottom: 8 }}>
+              <div className="workflow-icon" style={{ width: 60, height: 60, fontSize: 24, marginBottom: 10 }}><i className="ri-team-line"></i><div className="step-number">1</div></div>
+              <div className="workflow-title" style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>Elite Squads</div>
+              <div className="workflow-text" style={{ fontSize: 14 }}>Form teams of four to tackle challenges collaboratively, combining diverse skills for maximum impact.</div>
             </div>
-            <div className="workflow-step">
-              <div className="workflow-icon"><i className="ri-timer-flash-line"></i><div className="step-number">2</div></div>
-              <div className="workflow-title">Timed Missions</div>
-              <div className="workflow-text">Race against the clock to deliver high-quality, AI-powered solutions with strategic prompting.</div>
+            <div className="workflow-step" style={{ width: '100%', alignItems: 'center', textAlign: 'center', marginBottom: 8 }}>
+              <div className="workflow-icon" style={{ width: 60, height: 60, fontSize: 24, marginBottom: 10 }}><i className="ri-timer-flash-line"></i><div className="step-number">2</div></div>
+              <div className="workflow-title" style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>Timed Missions</div>
+              <div className="workflow-text" style={{ fontSize: 14 }}>Race against the clock to deliver high-quality, AI-powered solutions with strategic prompting.</div>
             </div>
-            <div className="workflow-step">
-              <div className="workflow-icon"><i className="ri-award-line"></i><div className="step-number">3</div></div>
-              <div className="workflow-title">The Final Boss</div>
-              <div className="workflow-text">Put all skills to the test in a culminating challenge to demonstrate complete Copilot mastery.</div>
+            <div className="workflow-step" style={{ width: '100%', alignItems: 'center', textAlign: 'center', marginBottom: 8 }}>
+              <div className="workflow-icon" style={{ width: 60, height: 60, fontSize: 24, marginBottom: 10 }}><i className="ri-award-line"></i><div className="step-number">3</div></div>
+              <div className="workflow-title" style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>The Final Boss</div>
+              <div className="workflow-text" style={{ fontSize: 14 }}>Put all skills to the test in a culminating challenge to demonstrate complete Copilot mastery.</div>
             </div>
           </div>
         </div>
-        <div className="qa-branding" style={{ position: 'absolute', left: 16, bottom: 16, fontSize: 18, color: '#0077B6', fontWeight: 700 }}>QA</div>
+        <div className="qa-branding" style={{ position: 'absolute', left: 12, bottom: 12, fontSize: 16, color: '#0077B6', fontWeight: 700, zIndex: 10 }}>QA</div>
       </div>
     </div>
   );
