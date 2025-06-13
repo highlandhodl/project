@@ -344,9 +344,72 @@ body {
   body {
     overflow: auto !important;
   }
-  .content-wrapper {
-    padding: 24px 8px !important;
+  .presentation-wrapper, .slide-container {
+    width: 100vw !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    max-width: 100vw !important;
+    box-shadow: none !important;
+    padding: 0 !important;
   }
+  .slide-container {
+    overflow-y: auto !important;
+    max-height: 100vh !important;
+    padding: 0 !important;
+  }
+  .content-wrapper {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 16px 4vw !important;
+    box-sizing: border-box !important;
+  }
+  /* Stack all columns and grids vertically */
+  .two-column, .benefits-container, .results-container, .advantages-container, .experience-highlights, .app-grid, .challenge-container, .outcomes-grid, .testimonials, .stat-container, .workflow-container, .microbucks-container {
+    flex-direction: column !important;
+    display: flex !important;
+    gap: 18px !important;
+    width: 100% !important;
+  }
+  .app-grid, .outcomes-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+  .metrics-column, .impact-column, .left-column, .right-column, .points-container, .strategy-container {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  /* Make all cards and stat boxes full width and reduce padding */
+  .stat-box, .benefit-card, .advantage-card, .app-card, .outcome-card, .testimonial, .points-item, .strategy-container, .highlight-box {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px 10px !important;
+    margin: 0 auto 12px auto !important;
+    font-size: 1rem !important;
+  }
+  /* Font sizes and spacing */
+  .headline {
+    font-size: 1.3rem !important;
+    margin-bottom: 10px !important;
+  }
+  .subheadline {
+    font-size: 1.1rem !important;
+    margin-bottom: 14px !important;
+  }
+  .content-text, .highlight-text, .benefit-title, .benefit-text, .stat-value, .stat-label, .outcome-title, .outcome-description, .advantage-title, .advantage-description, .challenge-title, .challenge-example, .app-title, .app-description, .app-example, .ms-badge {
+    font-size: 1rem !important;
+  }
+  .qa-branding, .qa-text {
+    font-size: 0.9rem !important;
+    left: 8px !important;
+    bottom: 8px !important;
+  }
+  /* Remove/hide absolute/floating elements */
+  .accent-shape, .accent-shape-2, .accent-circle, .graphic-circle-1, .graphic-circle-2, .accent-circle-1, .accent-circle-2, .coin-decoration, .competitive-tag, .meta-text {
+    display: none !important;
+  }
+  /* Navigation sticky and touch-friendly */
   .navigation-controls {
     position: sticky;
     bottom: 0;
@@ -394,13 +457,13 @@ body {
 }
 @media (max-width: 600px) {
   .content-wrapper {
-    padding: 12px 2px !important;
+    padding: 8px 2vw !important;
   }
   .headline {
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
   }
   .subheadline {
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
   }
   .dot {
     width: 28px;
